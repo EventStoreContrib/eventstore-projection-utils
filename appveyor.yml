@@ -12,5 +12,5 @@ branches:
   only:
    - master
 build_script:
-- sh: .\Build.ps1
+- sh: ./build.sh
 test: off
