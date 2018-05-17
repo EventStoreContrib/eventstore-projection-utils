@@ -1,5 +1,8 @@
 version: 1.0.{build}
 skip_branch_with_pr: true
+branches:
+  only:
+   - master
 environment:
   DOCKER_USER:
     secure: 5kpGjfjrd0dX7wF+GF3YRF7O0NHoHjXIHZDcnjAuF/0=
@@ -8,9 +11,7 @@ environment:
 image: ubuntu
 install:
    - docker version
-branches:
-  only:
-   - master
+   - ps: docker login -u $env:DOCKER_USER -p $env:DOCKER_PASS
 build_script:
 - sh: ./build.sh
 test: off

@@ -18,6 +18,5 @@ docker build --build-arg source=$source -t $latesttag -t $versiontag .
 echo "logging in with: ${DOCKER_USER}"
 echo $DOCKER_USER
 
-docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
 docker push $versiontag
 docker push $latesttag
