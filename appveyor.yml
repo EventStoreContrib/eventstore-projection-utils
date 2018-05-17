@@ -1,0 +1,16 @@
+version: 1.0.{build}
+environment:
+  DOCKER_USER:
+    secure: xxxxxxx
+  DOCKER_PASS:
+    secure: yyyyyyy
+image: ubuntu
+install:
+   - docker
+branches:
+  only:
+   - master
+build_script:
+- sh: .\Build.ps1
+test: off
+  
