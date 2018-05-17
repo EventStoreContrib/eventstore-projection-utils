@@ -11,7 +11,7 @@ environment:
 image: ubuntu
 install:
    - docker version
-   - ps: docker login -u $env:DOCKER_USER -p $env:DOCKER_PASS
+   - sh: docker login -u $DOCKER_USER -p $DOCKER_PASS
 build_script:
 - sh: ./build.sh
 test: off
