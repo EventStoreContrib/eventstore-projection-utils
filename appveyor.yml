@@ -1,4 +1,5 @@
 version: 1.0.{build}
+skip_branch_with_pr: true
 environment:
   DOCKER_USER:
     secure: 5kpGjfjrd0dX7wF+GF3YRF7O0NHoHjXIHZDcnjAuF/0=
@@ -6,7 +7,7 @@ environment:
     secure: qUYXocrsiTOsLkPTFJODDQ==
 image: ubuntu
 install:
-   - docker
+   - docker version
 branches:
   only:
    - master
