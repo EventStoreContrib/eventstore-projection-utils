@@ -1,9 +1,9 @@
 version: 1.0.{build}
 environment:
   DOCKER_USER:
-    secure: xxxxxxx
+    secure: 5kpGjfjrd0dX7wF+GF3YRF7O0NHoHjXIHZDcnjAuF/0=
   DOCKER_PASS:
-    secure: yyyyyyy
+    secure: qUYXocrsiTOsLkPTFJODDQ==
 image: ubuntu
 install:
    - docker
@@ -13,4 +13,3 @@ branches:
 build_script:
 - sh: .\Build.ps1
 test: off
-  
