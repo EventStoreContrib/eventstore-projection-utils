@@ -80,11 +80,14 @@ namespace EventStoreContrib.Utils
         private (ProjectionsManager, UserCredentials) Build(BaseArgs args)
         {
             var creds = new UserCredentials(args.Username, args.Password);
-            var eventStorePortNumber = Convert.ToInt32(args.Port);
+            var portNumber = Convert.ToInt32(args.Port);
             var ipAddress = IPAddress.Parse(args.IpAddress);
-            var projectionsManager = new ProjectionsManager(new ConsoleLogger(),
-                new IPEndPoint(ipAddress, eventStorePortNumber),
-                TimeSpan.FromMilliseconds(args.OperationTimeout));
+
+            EndPoint endpoint = string.IsNullOrEmpty(args.Hostname)
+                ? new IPEndPoint(ipAddress, portNumber) as EndPoint
+                : new DnsEndPoint(args.Hostname, portNumber) as EndPoint;
+
+            var projectionsManager = new ProjectionsManager(new ConsoleLogger(), endpoint, TimeSpan.FromMilliseconds(args.OperationTimeout));
 
             return (projectionsManager, creds);
         }

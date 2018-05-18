@@ -30,5 +30,7 @@ namespace EventStoreContrib.Utils
 
         [ArgDescription("The timeout to use for operations"), ArgShortcut("to"), ArgDefaultValue(3000)]
         public int OperationTimeout { get; set; }
+        [ArgDescription("Hostname Alternative to IpAddress (-ip)"), ArgShortcut("h")]
+        public string Hostname { get; internal set; }
     }
 }
