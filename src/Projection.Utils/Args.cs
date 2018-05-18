@@ -16,7 +16,7 @@ namespace EventStoreContrib.Utils
 
     public class BaseArgs
     {
-        [ArgDescription("The ip address of the Event Store instance"), ArgShortcut("ip")]
+        [ArgDescription("The ip address of the Event Store instance"), ArgShortcut("ip"), ArgDefaultValue("127.0.0.1")]
         public string IpAddress { get; set; }
 
         [ArgDescription("The port number (web) of the Event Store instance"), ArgShortcut("po"), ArgDefaultValue("2113")]
