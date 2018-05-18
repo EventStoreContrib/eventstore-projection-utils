@@ -1,2 +1,2 @@
-# eventstore-docker-utils
-A docker image to make it easier to deploy/manage event store instances
+# eventstore-projection-utils
+A docker image to make it easier to manage event store projections

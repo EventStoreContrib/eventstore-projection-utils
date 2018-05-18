@@ -1,0 +1,19 @@
+version: 1.0.0
+skip_branch_with_pr: true
+pull_requests:
+  do_not_increment_build_number: true
+branches:
+  only:
+   - master
+environment:
+  DOCKER_USER:
+    secure: 5kpGjfjrd0dX7wF+GF3YRF7O0NHoHjXIHZDcnjAuF/0=
+  DOCKER_PASS:
+    secure: qUYXocrsiTOsLkPTFJODDQ==
+image: ubuntu
+install:
+   - docker version
+   - sh: docker login -u $DOCKER_USER -p $DOCKER_PASS
+build_script:
+- sh: ./build.sh
+test: off
